@@ -343,6 +343,7 @@ var saving_id = function () {
       id: id,
       prolificID: prolificID,
       training_cond : training_cond,
+      AAT_cond : AAT_cond,
       control_cond : control_cond,
       ColorGroup: ColorGroup,
       timestamp: firebase.database.ServerValue.TIMESTAMP
@@ -358,6 +359,7 @@ var saving_vaast_trial = function () {
       id: id,
       prolificID: prolificID,
       training_cond : training_cond,
+      AAT_cond : AAT_cond,
       control_cond : control_cond,   
       ColorGroup: ColorGroup,   
       timestamp: firebase.database.ServerValue.TIMESTAMP,
@@ -376,6 +378,7 @@ var saving_browser_events = function (completion) {
       id: id,
       prolificID: prolificID,
       training_cond : training_cond,
+      AAT_cond : AAT_cond,
       control_cond : control_cond,
       ColorGroup: ColorGroup,
       timestamp: firebase.database.ServerValue.TIMESTAMP,
@@ -840,7 +843,8 @@ if (is_compatible) {
     on_finish: function () {
       saving_browser_events(completion = true);
       window.location.href = "https://marinerougier.github.io/AAT_JPSP/RC.html?id=" + id + "&prolificID=" + 
-      prolificID + "&training_cond=" + training_cond + "&control_cond=" + control_cond + "&ColorGroup=" + ColorGroup;
+      prolificID + "&training_cond=" + training_cond + "&AAT_cond=" + AAT_cond + "&control_cond=" + control_cond 
+      + "&ColorGroup=" + ColorGroup;
     }
   });
 }
