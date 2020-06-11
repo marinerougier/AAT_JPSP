@@ -782,17 +782,7 @@ timeline.push(
 timeline.push(save_id);
 
 switch(training_cond) {
-  case "approach_blue":
-    timeline.push(Gene_Instr,
-                  vaast_instructions_1_vaast,
-                  vaast_instructions_2_vaast,
-                  vaast_instructions_2_bis_vaast,
-                  vaast_instructions_3_vaast,
-                  vaast_instructions_4_vaast,
-                  vaast_training,
-                  vaast_instructions_end);
-    break;
-  case "approach_yellow":
+  case "AAT":
     timeline.push(Gene_Instr,
                   vaast_instructions_1_vaast,
                   vaast_instructions_2_vaast,
