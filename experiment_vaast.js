@@ -124,7 +124,7 @@ var training_cond = jsPsych.randomization.sampleWithoutReplacement(["AAT","cont"
 //var training_cond = jsPsych.randomization.sampleWithoutReplacement(["cont"], 1)[0];
 
 // for the AAT condition, randomization of approach/avoidance (for the blue vs. yellow group)
-var AAT_cont = jsPsych.randomization.sampleWithoutReplacement(["approach_blue", "approach_yellow"], 1)[0];
+var AAT_cond = jsPsych.randomization.sampleWithoutReplacement(["approach_blue", "approach_yellow"], 1)[0];
 
 // for the control condition, randomization of the E vs. I key (for the blue vs. yellow group)
 var control_cond = jsPsych.randomization.sampleWithoutReplacement(["blue_e", "blue_i"], 1)[0];
