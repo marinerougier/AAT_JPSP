@@ -120,14 +120,17 @@ var browser_events_n = 1;
 // Variable used to define experimental condition : approached color and group associated with the color
 
 // Expe (training) vs. control (cat. task) condition 
-var training_cond = jsPsych.randomization.sampleWithoutReplacement(["approach_blue", "approach_yellow","cont"], 1)[0];
+var training_cond = jsPsych.randomization.sampleWithoutReplacement(["AAT","cont"], 1)[0];
 //var training_cond = jsPsych.randomization.sampleWithoutReplacement(["cont"], 1)[0];
 
-// group associated with the yellow or blue color
-var ColorGroup   = jsPsych.randomization.sampleWithoutReplacement(["G1Y", "G1B"], 1)[0];
+// for the AAT condition, randomization of approach/avoidance (for the blue vs. yellow group)
+var AAT_cont = jsPsych.randomization.sampleWithoutReplacement(["approach_blue", "approach_yellow"], 1)[0];
 
 // for the control condition, randomization of the E vs. I key (for the blue vs. yellow group)
 var control_cond = jsPsych.randomization.sampleWithoutReplacement(["blue_e", "blue_i"], 1)[0];
+
+// group associated with the yellow or blue color
+var ColorGroup   = jsPsych.randomization.sampleWithoutReplacement(["G1Y", "G1B"], 1)[0];
 
 // cursor helper functions
 var hide_cursor = function () {
@@ -210,18 +213,18 @@ switch (training_cond) {
     }};
     break;
 
-  case "approach_blue":
-    movement_blue    = "approach";
-    movement_yellow    = "avoidance";
+  case "AAT":
+    {if (AAT_cond == "approach_blue"){
+    movement_blue = "approach";
+    movement_yellow = "avoidance";
     group_to_approach = "blue";
     group_to_avoid    = "yellow";
-    break;
-
-  case "approach_yellow":
-    movement_blue    = "avoidance";
-    movement_yellow    = "approach";
+    } else if (AAT_cond == "approach_yellow"){
+    movement_blue = "avoidance";
+    movement_yellow = "approach";
     group_to_approach = "yellow";
-    group_to_avoid   = "blue";
+    group_to_avoid    = "blue";
+    }};
     break;
 }
 
